@@ -1,0 +1,41 @@
+.LandingPage-container{
+    width: 99vw;
+    height: 99vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid black; */
+    font-family: 'Times New Roman';
+}
+.LandingPage-img{
+    max-width: 40vw;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+}
+.LandingPage-div{
+    width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.LandingPage-div-p{
+    font-size: 40px;
+    color: rgb(74, 121, 3);
+}
+#btn-enter{
+    /* border-color: rgb(74, 121, 3); */
+   
+    border: 3px solid rgb(74, 121, 3); 
+    color: rgb(74, 121, 3);
+    border-radius: 10px;
+    font-size: 40px;
+    background-color: white;
+}
+#btn-enter:hover{
+    cursor: pointer;
+    background-color: rgb(74, 121, 3);
+    color: white;
+}

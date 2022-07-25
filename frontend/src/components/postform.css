@@ -1,0 +1,46 @@
+#postform-container{
+    display: flex;
+    margin-top: 200px;
+    justify-content: center;
+    align-items: center;
+}
+#postform-form{
+    width: fit-content;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 2px solid #e2e2e2;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+
+.postform-input{
+    width: 100%;
+    display: flex;
+    justify-items: flex-start;
+}
+
+.file_input_div{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+}
+.file_input_hidden{
+    display: none;
+}
+.file_input_textbox{
+    min-width: 400px;
+    width: auto;
+}
+
+.postform-input-author-location{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+#postform-description{
+    width: 100%;
+}

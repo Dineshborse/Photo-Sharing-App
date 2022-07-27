@@ -11,7 +11,7 @@ const fs = require("fs");
 // setup view engine
 app.set("view engine", "ejs");
 // mongoose.connect("mongodb://localhost/assignment_4").then(() => {
-mongoose.connect("mongodb+srv://dineshborse:mangalborse@cluster0.umsb4.mongodb.net/instaclone?retryWrites=true&w=majority").then(() => {
+mongoose.connect("mongodb database link").then(() => {
     console.log("connected to mongoDB")
 }).then(() => {
     userImageData.find().then((Imagesfound) => {

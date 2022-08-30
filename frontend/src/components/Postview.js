@@ -1,10 +1,10 @@
-import { React, useState } from 'react';
+import { React, useEffect, useState } from 'react';
 
 
 import './postview.css'
 function Postview(props) {
 
-  const [userLikes,setUserLikes] = useState(parseInt(props.user_data.likes));
+  const [userLikes, setUserLikes] = useState(parseInt(props.user_data.likes));
   // console.log(props.user_data);
 
 
@@ -13,13 +13,14 @@ function Postview(props) {
     const payload = {
       postId: props.user_data._id.toString()
     }
-    fetch("https://dineshborse-instaclone-server.herokuapp.com/user/postlikes", {//'http://localhost:3001/user/postlikes'
+
+    fetch('https://dineshborse-instaclone-server.herokuapp.com/user/postlikes', {//'http://localhost:3001/user/postlikes'//"https://dineshborse-instaclone-server.herokuapp.com/user/postlikes"
       method: "POST",
       body: JSON.stringify(payload),
       headers: {
         "Content-Type": "application/json"
       }
-    }).then((data)=>data.json()).then((res) => {
+    }).then((data) => data.json()).then((res) => {
       // console.log(res);
       setUserLikes(parseInt(res.likes));
     }).catch((err) => {
@@ -39,7 +40,7 @@ function Postview(props) {
         <img className='img-tripleDot' src='../../menu.png' alt='menu'></img>
       </div>
       <div className='postview-div-2'>
-        <img className='image' src={"https://dineshborse-instaclone-server.herokuapp.com/" + props.user_data.PostImage} alt="not found"></img>
+        <img className='image' src={props.user_data.PostImage} alt="not found"></img>
       </div>
       <div className='postview-div-3'>
         <div className='postview-div-likes'>

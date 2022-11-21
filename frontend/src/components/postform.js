@@ -30,21 +30,33 @@ const PostForm = () => {
 
     return (
         <div id="postform-container">
-        <form id="postform-form" action="https://dineshborse-instaclone-server.herokuapp.com/user/new-post" method="POST">
+        <form id="postform-form" action="http://localhost:3001/user/new-post" method="POST">
             <div className="file_input_div">
                 <input ref= {fileNameTextBox} type="text" className="file_input_textbox" readOnly="readOnly" placeholder='No File Selected'></input>
                 <input type="button" onClick={handleBrowseClick} value="Browse"  className="file_input_button" />
                 <input ref={fileInputElement} type="file" onChange={handleFileOnChange} name="uploaded_file" className="file_input_hidden" />
                 <input ref= {inputBase64data} type="text" name="filedata" readOnly="readOnly" className="file_input_hidden"></input>
             </div>
-            <div className="postform-input-author-location">
+            {/* <div className="postform-input-author-location">
                 <input id="postform-author" type={"text"} name="author" placeholder="Author"></input>
                 <input id="postform-location" type={"text"} name="location" placeholder="Location"></input>
-            </div>
+            </div> */}
             <div className="postform-input">
                 <input id="postform-description" type={"text"} name="description" placeholder="Description"></input>
             </div>
-            <button id="btn-post" type="submit">Post</button>
+            <div className="postform-input">
+                <input id="postform-description" type={"text"} name=" available_quantity" placeholder="Available Quantity"></input>
+            </div>
+            <div className="postform-input">
+                <input id="postform-description" type={"text"} name="weight" placeholder="Weight"></input>
+            </div>
+            <div className="postform-input">
+                <input id="postform-description" type={"text"} name="v_weight" placeholder="Volumetric Weight"></input>
+            </div>
+            <div className="postform-input">
+                <input id="postform-description" type={"text"} name="price" placeholder="Price"></input>
+            </div>
+            <button id="btn-post" type="submit">Submit</button>
         </form>
         </div>
     );

@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const userData = require("./modals/user-modal");
 const userImageData = require("./modals/post-img-data-modal");
+const inventoryInfo = require('./modals/inventory')
 const imageDataURI = require("image-data-uri");
 const fs = require("fs");
 
@@ -14,23 +15,30 @@ router.post("/new-post", (req, res) => {
         // console.log(result);
         fileName = result.split(`/Post_Images/`)[1];
         const dateArr = tempDate.toDateString().split(" ");
-        userImageData.create({
-            name: fileName,
-            imagedata: req.body.filedata
+        inventoryInfo.create({
+            image_name: fileName,
+            image: req.body.filedata,
+            name: req.body.name,
+            description: req.body.description,
+            date: `${dateArr[2]} ${dateArr[1]} ${dateArr[3]}`,
+            available_quantity: req.body.available_quantity,
+            weight: req.body.weight,
+           y: req.body.v_weight,
+            price: req.body.price,
         }).then(val=>{
             // console.log(val);
         }).catch((err)=>{console.log(err)});
 
-        userData.create({
-            name: req.body.author,
-            location: req.body.location,
-            description: req.body.description,
-            PostImage: fileName,
-            date: `${dateArr[2]} ${dateArr[1]} ${dateArr[3]}`
+        // userData.create({
+        //     name: req.body.author,
+        //     location: req.body.location,
+        //     description: req.body.description,
+        //     PostImage: fileName,
+        //     date: `${dateArr[2]} ${dateArr[1]} ${dateArr[3]}`
 
-        }).then((val) => {
-            // console.log(val)
-        }).catch((err) => { console.log(err) });
+        // }).then((val) => {
+        //     // console.log(val)
+        // }).catch((err) => { console.log(err) });
     })
         .catch((err) => { console.log(err) });
 
